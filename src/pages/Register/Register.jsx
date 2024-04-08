@@ -1,5 +1,18 @@
+// import { useContext } from "react";
 import { Link } from "react-router-dom";
+// import { AuthContext } from "../../provider/AuthProvider";
+
 const Register = () => {
+    // const {} = useContext(AuthContext);
+    const handleRegister = (e) =>{
+        e.preventDefault();
+        const form = new FormData(e.target);
+        const name = form.get('name');
+        const email = form.get('email');
+        const photo = form.get('photoUrl');
+        const password = form.get('password');
+        console.log(name,email,photo,password);
+    }
     return (
         <div className="hero min-h-screen font-poppins ">
       <div className="flex flex-col md:flex-row-reverse   ">
@@ -15,7 +28,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-        <div className="card shrink-0 w-full md:w-1/2    shadow-2xl bg-base-100 rounded-r-none">
+        <div onSubmit={handleRegister} className="card shrink-0 w-full md:w-1/2    shadow-2xl bg-base-100 rounded-r-none">
           <form className="card-body ">
             <div className="form-control">
               <label className="label">
@@ -59,6 +72,7 @@ const Register = () => {
               </label>
               <input
                 type="password"
+                name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
@@ -69,7 +83,7 @@ const Register = () => {
               <button className="btn bg-[#FFA920] text-white">Register</button>
             </div>
             
-            <p className="mt-4 text-center font-roboto text-lg">Already Registered to Sweet Stay? Please <Link to='/register' className="font-bold text-[#FFA920]">Register</Link></p>
+            <p className="mt-4 text-center font-roboto text-lg">Already Registered to Sweet Stay? Please <Link to='/login' className="font-bold text-[#FFA920]">Login</Link></p>
           </form>
         </div>
       </div>
