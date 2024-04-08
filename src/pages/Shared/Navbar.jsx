@@ -31,6 +31,7 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-poppins"
           >
             {Links}
+            
           </ul>
         </div>
         <Link to='/' className="btn btn-ghost text-xl md:text-3xl font-lato text-black">Sweet<span className="text-[#FFA920]">Stay</span> </Link>
@@ -41,7 +42,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-[#FFA920] text-white font-poppins rounded-3xl">Login</a>
+        <Link to="/login" className="btn bg-[#FFA920] text-white font-poppins rounded-3xl">Login</Link>
       </div>
     </div>
   );
