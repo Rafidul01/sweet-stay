@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import { FaGoogle, FaGithub } from "react-icons/fa";
-const Login = () => {
-  return (
-    <div className="hero min-h-screen font-poppins ">
+const Register = () => {
+    return (
+        <div className="hero min-h-screen font-poppins ">
       <div className="flex flex-col md:flex-row-reverse   ">
         <div className="text-center lg:text-left w-full md:w-[1/2]  bg-[url('https://i.ibb.co/3zvbykC/bernard-hermant-CLKGGw-IBTa-Y-unsplash.jpg')] bg-center bg-cover shadow-xl  md:rounded-r-2xl flex justify-center items-center p-4 ">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-black">Login now!</h1>
+            <h1 className="text-5xl font-bold text-black">Register now!</h1>
             <div className="py-6  text-black opacity-80  space-y-4">
               <p>Your journey to exceptional real estate experiences starts here!</p><p>Please login to unlock exclusive access to
               premium listings, expert insights, and unparalleled hospitality
@@ -18,6 +17,18 @@ const Login = () => {
         </div>
         <div className="card shrink-0 w-full md:w-1/2    shadow-2xl bg-base-100 rounded-r-none">
           <form className="card-body ">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                className="input input-bordered"
+                required
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -32,11 +43,22 @@ const Login = () => {
             </div>
             <div className="form-control">
               <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                type="text"
+                name="photoUrl"
+                placeholder="Photo URL"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
                 type="password"
-                name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
@@ -44,25 +66,15 @@ const Login = () => {
              
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-[#FFA920] text-white">Login</button>
+              <button className="btn bg-[#FFA920] text-white">Register</button>
             </div>
-            <div className="mt-6 text-center ">
-                <div className="mb-4 flex gap-3 justify-center items-center" >
-                    <hr className=" w-14 md:w-20 lg:w-40" />
-                    <h1 className="font-bold">Login With</h1>
-                    <hr className=" w-14 md:w-20 lg:w-40"/>
-                </div>
-              <div className="flex justify-center items-center gap-4">
-              <button className="btn bg-[#c97800] text-white"><FaGoogle />Google</button>
-              <button className="btn bg-[#c97800] text-white"><FaGithub></FaGithub> Github</button>
-              </div>
-            </div>
-            <p className="mt-4 text-center font-roboto text-lg">New to Sweet Stay? Please <Link to='/register' className="font-bold text-[#FFA920] hover:text-[#c97800]">Register</Link></p>
+            
+            <p className="mt-4 text-center font-roboto text-lg">Already Registered to Sweet Stay? Please <Link to='/register' className="font-bold text-[#FFA920]">Register</Link></p>
           </form>
         </div>
       </div>
     </div>
-  );
+    );
 };
 
-export default Login;
+export default Register;
