@@ -1,6 +1,24 @@
 import { Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 const Login = () => {
+    const {logIn} = useContext(AuthContext);
+    const handleLogin = (e) =>{
+        e.preventDefault();
+        const form = new FormData(e.target);
+        const email = form.get('email');
+        const password = form.get('password');
+        logIn(email,password)
+        .then(result => {
+            e.target.reset();
+            console.log(result.user);
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+        // console.log(name,email,photo,password);
+    }
   return (
     <div className="hero min-h-screen font-poppins ">
       <div className="flex flex-col md:flex-row-reverse   ">
@@ -17,7 +35,7 @@ const Login = () => {
           </div>
         </div>
         <div className="card shrink-0 w-full md:w-1/2    shadow-2xl bg-base-100 rounded-r-none">
-          <form className="card-body ">
+          <form onSubmit={handleLogin} className="card-body ">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>

@@ -23,6 +23,7 @@ const Register = () => {
             })
             .then()
             .catch()
+            e.target.reset();
         })
         .catch(error => {
             console.error(error);
@@ -72,7 +73,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text">Photo URL</span>
               </label>
               <input
                 type="text"
