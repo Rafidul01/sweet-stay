@@ -3,7 +3,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 const Login = () => {
-  const { logIn, googleLogIn,update,serUpdate } = useContext(AuthContext);
+  const { logIn, googleLogIn,githubLogin } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -22,7 +22,14 @@ const Login = () => {
   const handleGoogleLogIn = () => {
     googleLogIn()
     .then(()=>{
-      serUpdate(!update)
+      
+    })
+    .catch()
+  };
+  const handleGithubLogin = () => {
+    githubLogin()
+    .then(()=>{
+      
     })
     .catch()
   };
@@ -90,7 +97,7 @@ const Login = () => {
                   <FaGoogle />
                   Google
                 </button>
-                <button className="btn bg-[#c97800] text-white">
+                <button onClick={handleGithubLogin} className="btn bg-[#c97800] text-white">
                   <FaGithub></FaGithub> Github
                 </button>
               </div>
