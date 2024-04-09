@@ -16,6 +16,20 @@ const Register = () => {
         const email = form.get('email');
         const photo = form.get('photoUrl');
         const password = form.get('password');
+
+        if(password.length < 6){
+          toast.error("Password must be at least 6 characters !")
+          return;
+        }
+        else if(!/[A-Z]/.test(password)){
+          toast.error("Password must have an Uppercase letter!")
+          return;
+        }
+        else if(!/[a-z]/.test(password)){
+          toast.error("Password must have a Lowercase letter!")
+          return;
+        }
+
         createUser(email,password)
         .then(result => {
             console.log(result.user)
@@ -101,11 +115,12 @@ const Register = () => {
               />
              
             </div>
+            <p><span className="font-bold">Note : </span><small className="text-black opacity-80">Your password must be at least <span className="text-[#FFA920]">6 characters</span> and includes <span className="text-[#FFA920]">an Uppercase and a Lowercase</span> character.</small></p>
             <div className="form-control mt-6">
               <button className="btn bg-[#FFA920]  text-white">Register</button>
             </div>
             
-            <p className="mt-4 text-center font-roboto text-lg">Already Registered to Sweet Stay? Please <Link to='/login' className="font-bold text-[#FFA920] hover:text-[#c97800]">Login</Link></p>
+            <p className="text-center font-roboto text-lg">Already Registered to Sweet Stay? Please <Link to='/login' className="font-bold text-[#FFA920] hover:text-[#c97800]">Login</Link></p>
           </form>
         </div>
       </div>
