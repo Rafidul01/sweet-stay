@@ -5,7 +5,7 @@ import { getAuth, updateProfile } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 const auth = getAuth(app)
 const Register = () => {
-    const { user , createUser} = useContext(AuthContext);
+    const { user , createUser, setUpdate,update} = useContext(AuthContext);
     console.log(user);
     const handleRegister = (e) =>{
         e.preventDefault();
@@ -21,7 +21,9 @@ const Register = () => {
                 displayName: name,
                 photoURL: photo
             })
-            .then()
+            .then(()=>{
+              setUpdate(!update);
+            })
             .catch()
             e.target.reset();
         })

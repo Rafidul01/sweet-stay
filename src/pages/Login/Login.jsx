@@ -3,22 +3,29 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 const Login = () => {
-    const {logIn} = useContext(AuthContext);
-    const handleLogin = (e) =>{
-        e.preventDefault();
-        const form = new FormData(e.target);
-        const email = form.get('email');
-        const password = form.get('password');
-        logIn(email,password)
-        .then(result => {
-            e.target.reset();
-            console.log(result.user);
-        })
-        .catch(error =>{
-            console.log(error);
-        })
-        // console.log(name,email,photo,password);
-    }
+  const { logIn, googleLogIn,update,serUpdate } = useContext(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const email = form.get("email");
+    const password = form.get("password");
+    logIn(email, password)
+      .then((result) => {
+        e.target.reset();
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    // console.log(name,email,photo,password);
+  };
+  const handleGoogleLogIn = () => {
+    googleLogIn()
+    .then(()=>{
+      serUpdate(!update)
+    })
+    .catch()
+  };
   return (
     <div className="hero min-h-screen font-poppins ">
       <div className="flex flex-col md:flex-row-reverse   ">
@@ -26,10 +33,16 @@ const Login = () => {
           <div className="text-center">
             <h1 className="text-5xl font-bold text-black">Login now!</h1>
             <div className="py-6  text-black opacity-80  space-y-4">
-              <p>Your journey to exceptional real estate experiences starts here!</p><p>Please login to unlock exclusive access to
-              premium listings, expert insights, and unparalleled hospitality
-              solutions.</p> 
-               <p>Your journey to exceptional real estate experiences starts here!</p>
+              <p>
+                Your journey to exceptional real estate experiences starts here!
+              </p>
+              <p>
+                Please login to unlock exclusive access to premium listings,
+                expert insights, and unparalleled hospitality solutions.
+              </p>
+              <p>
+                Your journey to exceptional real estate experiences starts here!
+              </p>
               <p>Team Sweet Stay!</p>
             </div>
           </div>
@@ -59,23 +72,38 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
-             
             </div>
             <div className="form-control mt-6">
               <button className="btn bg-[#FFA920] text-white">Login</button>
             </div>
             <div className="mt-6 text-center ">
-                <div className="mb-4 flex gap-3 justify-center items-center" >
-                    <hr className=" w-14 md:w-20 lg:w-40" />
-                    <h1 className="font-bold">Login With</h1>
-                    <hr className=" w-14 md:w-20 lg:w-40"/>
-                </div>
+              <div className="mb-4 flex gap-3 justify-center items-center">
+                <hr className=" w-14 md:w-20 lg:w-40" />
+                <h1 className="font-bold">Login With</h1>
+                <hr className=" w-14 md:w-20 lg:w-40" />
+              </div>
               <div className="flex justify-center items-center gap-4">
-              <button className="btn bg-[#c97800] text-white"><FaGoogle />Google</button>
-              <button className="btn bg-[#c97800] text-white"><FaGithub></FaGithub> Github</button>
+                <button
+                  onClick={handleGoogleLogIn}
+                  className="btn bg-[#c97800] text-white"
+                >
+                  <FaGoogle />
+                  Google
+                </button>
+                <button className="btn bg-[#c97800] text-white">
+                  <FaGithub></FaGithub> Github
+                </button>
               </div>
             </div>
-            <p className="mt-4 text-center font-roboto text-lg">New to Sweet Stay? Please <Link to='/register' className="font-bold text-[#FFA920] hover:text-[#c97800]">Register</Link></p>
+            <p className="mt-4 text-center font-roboto text-lg">
+              New to Sweet Stay? Please{" "}
+              <Link
+                to="/register"
+                className="font-bold text-[#FFA920] hover:text-[#c97800]"
+              >
+                Register
+              </Link>
+            </p>
           </form>
         </div>
       </div>
