@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import { toast } from 'react-toastify';
+
 const auth = getAuth(app)
 const Register = () => {
     const { user , createUser, setUpdate,update} = useContext(AuthContext);
@@ -26,6 +28,7 @@ const Register = () => {
             })
             .catch()
             e.target.reset();
+            toast.success("Registered Successful!")
         })
         .catch(error => {
             console.error(error);

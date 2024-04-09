@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from 'react-toastify';
 const Login = () => {
-  const { logIn, googleLogIn,githubLogin } = useContext(AuthContext);
+  const { logIn, googleLogIn, githubLogin } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -13,25 +14,32 @@ const Login = () => {
       .then((result) => {
         e.target.reset();
         console.log(result.user);
+        toast.success("Login Successful!")
       })
       .catch((error) => {
         console.log(error);
+        toast.error("login failed..")
       });
     // console.log(name,email,photo,password);
   };
   const handleGoogleLogIn = () => {
     googleLogIn()
-    .then(()=>{
-      
-    })
-    .catch()
+      .then(() => {
+        toast.success("Login Successful!")
+      })
+      .catch(()=>{
+        toast.error("login failed..")
+
+      });
   };
   const handleGithubLogin = () => {
     githubLogin()
-    .then(()=>{
-      
-    })
-    .catch()
+      .then(() => {
+        toast.success("Login Successful!")
+      })
+      .catch(()=>{
+        toast.error("login failed..")
+      });
   };
   return (
     <div className="hero min-h-screen font-poppins ">
@@ -55,63 +63,73 @@ const Login = () => {
           </div>
         </div>
         <div className="card shrink-0 w-full md:w-1/2    shadow-2xl bg-base-100 rounded-r-none">
-          <form onSubmit={handleLogin} className="card-body ">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="email"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control mt-6">
-              <button className="btn bg-[#FFA920] text-white">Login</button>
-            </div>
-            <div className="mt-6 text-center ">
-              <div className="mb-4 flex gap-3 justify-center items-center">
-                <hr className=" w-14 md:w-20 lg:w-40" />
-                <h1 className="font-bold">Login With</h1>
-                <hr className=" w-14 md:w-20 lg:w-40" />
+          <div className="card-body">
+            <form onSubmit={handleLogin} >
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="email"
+                  className="input input-bordered"
+                  required
+                />
               </div>
-              <div className="flex justify-center items-center gap-4">
-                <button
-                  onClick={handleGoogleLogIn}
-                  className="btn bg-[#c97800] text-white"
-                >
-                  <FaGoogle />
-                  Google
-                </button>
-                <button onClick={handleGithubLogin} className="btn bg-[#c97800] text-white">
-                  <FaGithub></FaGithub> Github
-                </button>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Password</span>
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control mt-6">
+                <button className="btn bg-[#FFA920] text-white">Login</button>
+              </div>
+            </form>
+            <div>
+              <div>
+                
+                <div className="mt-6 text-center ">
+                  <div className="mb-4 flex gap-3 justify-center items-center">
+                    <hr className=" w-14 md:w-20 lg:w-40" />
+                    <h1 className="font-bold">Login With</h1>
+                    <hr className=" w-14 md:w-20 lg:w-40" />
+                  </div>
+                  <div className="flex justify-center items-center gap-4">
+                    <button
+                      onClick={handleGoogleLogIn}
+                      className="btn bg-[#c97800] text-white"
+                    >
+                      <FaGoogle />
+                      Google
+                    </button>
+                    <button
+                      onClick={handleGithubLogin}
+                      className="btn bg-[#c97800] text-white"
+                    >
+                      <FaGithub></FaGithub> Github
+                    </button>
+                  </div>
+                </div>
+                <p className="mt-4 text-center font-roboto text-lg">
+                  New to Sweet Stay? Please{" "}
+                  <Link
+                    to="/register"
+                    className="font-bold text-[#FFA920] hover:text-[#c97800]"
+                  >
+                    Register
+                  </Link>
+                </p>
               </div>
             </div>
-            <p className="mt-4 text-center font-roboto text-lg">
-              New to Sweet Stay? Please{" "}
-              <Link
-                to="/register"
-                className="font-bold text-[#FFA920] hover:text-[#c97800]"
-              >
-                Register
-              </Link>
-            </p>
-          </form>
+          </div>
         </div>
       </div>
     </div>
