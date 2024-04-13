@@ -1,18 +1,10 @@
-import { useContext, useEffect, useState  } from "react";
+import { useContext} from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from 'react-toastify';
 
 const Navbar = () => {
-  const { user, logOut,update} = useContext(AuthContext);
-  console.log(user);
-  const [photo,setPhoto] = useState(user && user.photoURL);
-  const [name,setName] = useState(user && user.displayName);
-  useEffect(()=>{
-    setPhoto(user && user.photoURL);
-    setName(user && user.displayName);
-    console.log("ami update");
-  },[ user && update ])
+  const { user, logOut} = useContext(AuthContext);
   const handleLogOut = () =>{
     logOut()
     .then(()=>{
@@ -78,9 +70,9 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <div className="avatar hover:tooltip hover:tooltip-open hover:tooltip-bottom" data-tip={name}>
+            <div className="avatar hover:tooltip hover:tooltip-open hover:tooltip-bottom" data-tip={user.displayName}>
               <div className="w-8 mr-4 rounded-full ring ring-[#FFA920] ring-offset-base-100 ring-offset-2 ">
-                <img src={photo} />
+                <img src={user.photoURL} />
               </div>
             </div>
             <Link
