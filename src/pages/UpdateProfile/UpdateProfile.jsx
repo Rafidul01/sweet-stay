@@ -6,7 +6,7 @@ import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
 
 const UpdateProfile = () => {
-    const {user,setUpdate} = useContext(AuthContext);
+    const {user,setUpdate,update} = useContext(AuthContext);
     const [nameInput, setNameInput] = useState(true);
     const [photoInput, setPhotoInput] = useState(true);
     console.log(user);
@@ -21,7 +21,7 @@ const UpdateProfile = () => {
     })
     .then(()=>{
       toast.success("Profile Updated Successfully!");
-      setUpdate(true);
+      setUpdate(!update);
       e.target.reset();
       setNameInput(true);
       setPhotoInput(true);

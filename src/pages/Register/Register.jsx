@@ -5,7 +5,7 @@ import { updateProfile } from "firebase/auth";
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const { user , createUser, setUpdate} = useContext(AuthContext);
+    const { user , createUser, setUpdate, update} = useContext(AuthContext);
     console.log(user);
     const handleRegister = (e) =>{
         e.preventDefault();
@@ -36,7 +36,7 @@ const Register = () => {
                 photoURL: photo
             })
             .then(()=>{
-              setUpdate(true);
+              setUpdate(!update);
             })
             .catch()
             e.target.reset();
