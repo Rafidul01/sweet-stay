@@ -57,7 +57,7 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="btn btn-ghost text-xl md:text-3xl font-lato text-black"
+          className="btn btn-ghost text-xl md:text-3xl text-start p-0 font-lato text-black"
         >
           Sweet<span className="text-[#FFA920]">Stay</span>{" "}
         </Link>
@@ -71,13 +71,13 @@ const Navbar = () => {
         {user ? (
           <>
             <div className="avatar hover:tooltip hover:tooltip-open hover:tooltip-bottom" data-tip={user.displayName}>
-              <div className="w-8 mr-4 rounded-full ring ring-[#FFA920] ring-offset-base-100 ring-offset-2 ">
+              <div className="w-6 md:w-8 mr-2 md:mr-4 rounded-full ring ring-[#FFA920] ring-offset-base-100 ring-offset-2 ">
                 <img src={user.photoURL} />
               </div>
             </div>
             <Link
               onClick={handleLogOut}
-              className="btn bg-[#FFA920] text-white font-poppins rounded-3xl"
+              className="btn bg-[#FFA920] text-white font-poppins rounded-3xl min-h-0 h-10 md:min-h-[3rem] md:h-[3rem]"
             >
               LogOut
             </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
           <>
             <Link
               to="/login"
-              className="btn bg-[#FFA920] text-white font-poppins rounded-3xl"
+              className="btn bg-[#FFA920] text-white font-poppins rounded-3xl min-h-0 h-10 md:min-h-[3rem] md:h-[3rem]"
             >
               Login
             </Link>
