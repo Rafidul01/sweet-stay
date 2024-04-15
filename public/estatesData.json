@@ -1,0 +1,164 @@
+[
+    {
+        "id": 1,
+        "estate_title": "Luxury Beachfront Villa",
+        "segment_name": "Resort",
+        "description": "Indulge in ultimate luxury with this stunning beachfront villa, offering panoramic ocean views and top-notch amenities.",
+        "price": "$3,500,000",
+        "status": "sale",
+        "area": "6,000 sq ft",
+        "location": "Malibu, California",
+        "facilities": [
+            "Private beach access",
+            "Infinity pool",
+            "Outdoor lounge area",
+            "Gourmet kitchen",
+            "Home theater"
+        ],
+        "image_url": "https://i.ibb.co/wJG1Fwh/bilderboken-rlw-E8f8an-Oc-unsplash.jpg"
+    },
+    {
+        "id": 2,
+        "estate_title": "Mountain Lodge",
+        "segment_name": "Lodge",
+        "description": "Escape to the mountains and own this charming lodge retreat, offering cozy accommodations and breathtaking views.",
+        "price": "$850,000",
+        "status": "sale",
+        "area": "4,500 sq ft",
+        "location": "Aspen, Colorado",
+        "facilities": [
+            "Stone fireplace",
+            "Hot tub with mountain views",
+            "Hiking trails",
+            "Outdoor dining area",
+            "Ski-in/ski-out access"
+        ],
+        "image_url": "https://i.ibb.co/Cz6vtnY/wayne-hollman-thmp-DRiej-D4-unsplash.jpg"
+    },
+    {
+        "id": 3,
+        "estate_title": "Historic Mansion",
+        "segment_name": "Hotel",
+        "description": "Own a piece of history with this grand historic mansion, featuring exquisite architecture and timeless elegance.",
+        "price": "$6,500,000",
+        "status": "sale",
+        "area": "10,000 sq ft",
+        "location": "Newport, Rhode Island",
+        "facilities": [
+            "Ballroom",
+            "Library",
+            "Formal gardens",
+            "Guest suites",
+            "Wine cellar"
+        ],
+        "image_url": "https://i.ibb.co/mqjNy4K/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"
+    },
+    {
+        "id": 4,
+        "estate_title": "Luxury Ski Chalet",
+        "segment_name": "Lodge",
+        "description": "Experience luxury living with this stunning ski chalet, nestled in the heart of the alpine slopes with ski-in/ski-out access.",
+        "price": "$2,200,000",
+        "status": "sale",
+        "area": "5,000 sq ft",
+        "location": "Whistler, British Columbia",
+        "facilities": [
+            "Outdoor hot tub",
+            "Home theater",
+            "Gourmet kitchen",
+            "Private elevator",
+            "Ski storage room"
+        ],
+        "image_url": "https://i.ibb.co/zfb4KzV/roberto-nickson-dc0leu1-QSFA-unsplash.jpg"
+    },
+    {
+        "id": 5,
+        "estate_title": "Seaside Resort",
+        "segment_name": "Resort",
+        "description": "Relax and rejuvenate at our luxurious seaside resort, offering stunning ocean views, gourmet dining, and endless entertainment.",
+        "price": "$300 - $800 per night",
+        "status": "rent",
+        "area": "8,000 sq ft",
+        "location": "Miami Beach, Florida",
+        "facilities": [
+            "Private beach access",
+            "Infinity pool",
+            "Spa & wellness center",
+            "Fine dining restaurants",
+            "Water sports activities"
+        ],
+        "image_url": "https://i.ibb.co/Nt0twk7/zero-take-Wv-Hrr-R1-C5-Po-unsplash.jpg"
+    },
+    {
+        "id": 6,
+        "estate_title": "Mountain Lodge",
+        "segment_name": "Lodge",
+        "description": "Escape to the mountains with our cozy lodge accommodations, offering breathtaking views and access to outdoor adventures year-round.",
+        "price": "$200 - $600 per night",
+        "status": "rent",
+        "area": "4,500 sq ft",
+        "location": "Aspen, Colorado",
+        "facilities": [
+            "Ski-in/ski-out access",
+            "Hot tub with mountain views",
+            "Gourmet catering",
+            "Hiking trails",
+            "Outdoor dining"
+        ],
+        "image_url": "https://i.ibb.co/L6pHKLf/dallas-reedy-LH1-H30-YWak-E-unsplash.jpg"
+    },
+    {
+        "id": 7,
+        "estate_title": "Tropical Villa",
+        "segment_name": "Vacation Rental",
+        "description": "Experience paradise in our luxurious tropical villa, surrounded by lush gardens and just steps away from the beach.",
+        "price": "$400 - $1200 per night",
+        "status": "rent",
+        "area": "6,000 sq ft",
+        "location": "Maui, Hawaii",
+        "facilities": [
+            "Private pool",
+            "Outdoor lounge area",
+            "Chef's kitchen",
+            "Media room",
+            "Daily housekeeping"
+        ],
+        "image_url": "https://i.ibb.co/2y53h24/alka-jha-t-T86hu-Qh-F24-unsplash.jpg"
+    },
+    {
+        "id": 8,
+        "estate_title": "Rustic Cabin Retreat",
+        "segment_name": "Lodge",
+        "description": "Unwind in nature at our charming rustic cabin retreat, nestled in the heart of the forest with cozy accommodations and outdoor adventures.",
+        "price": "$100 - $300 per night",
+        "status": "rent",
+        "area": "1,200 sq ft",
+        "location": "Lake Tahoe, California",
+        "facilities": [
+            "Fireplace",
+            "Outdoor deck",
+            "Hiking trails",
+            "Canoeing",
+            "BBQ grill"
+        ],
+        "image_url": "https://i.ibb.co/rGk7XTs/cara-fuller-Be-HRk-ALw-XIw-unsplash.jpg"
+    },
+    {
+        "id": 9,
+        "estate_title": "Urban Boutique Hotel",
+        "segment_name": "Hotel",
+        "description": "Discover urban sophistication at our boutique hotel, located in the heart of the city with stylish accommodations and personalized service.",
+        "price": "$200 - $500 per night",
+        "status": "rent",
+        "area": "3,000 sq ft",
+        "location": "New York City, New York",
+        "facilities": [
+            "Rooftop bar",
+            "Fitness center",
+            "Meeting rooms",
+            "Concierge service",
+            "Complimentary breakfast"
+        ],
+        "image_url": "https://i.ibb.co/kqjNCt9/allphoto-bangkok-c-G7-oka4rpk-unsplash.jpg"
+    }
+]

@@ -62,7 +62,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-        <div onSubmit={handleRegister} className="card shrink-0 w-full md:w-1/2    shadow-2xl bg-base-100 rounded-l-none rounded-r-none md:rounded-2xl">
+        <div onSubmit={handleRegister} className="card shrink-0 w-full md:w-1/2    shadow-2xl bg-base-100 rounded-l-none rounded-r-none rounded-2xl md:rounded-l-2xl">
           <form className="card-body ">
             <div className="form-control">
               <label className="label">
