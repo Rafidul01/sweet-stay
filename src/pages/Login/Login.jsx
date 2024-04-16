@@ -1,10 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle, FaGithub } from "react-icons/fa";
-import { useContext } from "react";
+import { FaGoogle, FaGithub, FaRegEyeSlash, FaRegEye } from "react-icons/fa";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from 'react-toastify';
 const Login = () => {
   const { logIn, googleLogIn, githubLogin } = useContext(AuthContext);
+  const [eye, setEye] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const handleLogin = (e) => {
@@ -46,6 +47,9 @@ const Login = () => {
         toast.error("login failed..")
       });
   };
+  const handelSeePass = () =>{
+    setEye(!eye);
+  }
   return (
     <div className="hero min-h-screen font-poppins ">
       <div className="flex flex-col md:flex-row-reverse   ">
@@ -82,17 +86,18 @@ const Login = () => {
                   required
                 />
               </div>
-              <div className="form-control">
+              <div className="form-control relative">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={eye ? "text" : "password"}
                   name="password"
                   placeholder="password"
                   className="input input-bordered"
                   required
                 />
+                <Link onClick={handelSeePass} className="text-2xl absolute right-3 top-[48px]">{eye ? <FaRegEye />:<FaRegEyeSlash />}</Link>
               </div>
               <div className="form-control mt-6">
                 <button className="btn bg-[#FFA920] text-white">Login</button>

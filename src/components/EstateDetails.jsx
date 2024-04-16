@@ -62,9 +62,9 @@ const EstateDetails = () => {
         <div className="rounded-2xl">
           <MapContainer
             center={[latitude, longitude]}
-            zoom={13}
-            scrollWheelZoom={false}
-            
+            zoom={15}
+            scrollWheelZoom={true}
+            className="w-[315px] md:w-[400px] lg:w-[600px] h-[315px] md:h-full rounded-2xl border-2 border-orange-400"
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

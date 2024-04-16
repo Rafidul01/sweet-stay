@@ -2,7 +2,7 @@ import { useContext} from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from 'react-toastify';
-
+import log from "../../images/logo.png"
 const Navbar = () => {
   const { user, logOut} = useContext(AuthContext);
   const handleLogOut = () =>{
@@ -29,7 +29,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 relative z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,18 +53,33 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-poppins"
           >
             {Links}
+            {
+              user ? <> <li><Link
+              onClick={handleLogOut}
+              className="btn bg-[#FFA920] text-white font-poppins rounded-3xl min-h-0 h-10 md:min-h-[3rem] md:h-[3rem]"
+            >
+              LogOut
+            </Link></li> </> :
+            <> <li><Link
+            to="/login"
+            className="btn bg-[#FFA920] text-white font-poppins rounded-3xl min-h-0 h-10 md:min-h-[3rem] md:h-[3rem]"
+          >
+            Login
+          </Link></li> </>
+            }
           </ul>
         </div>
         <Link
           to="/"
           className="btn btn-ghost text-xl md:text-3xl text-start p-0 font-lato text-black"
         >
-          Sweet<span className="text-[#FFA920]">Stay</span>{" "}
+         <span className="flex items-center gap-1"> <img src={log} className="h-8" alt="" /> Sweet<span className="text-[#FFA920]">Stay</span>{" "}</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-black opacity-80 ">
           {Links}
+
         </ul>
       </div>
       <div className="navbar-end">
@@ -77,7 +92,7 @@ const Navbar = () => {
             </div>
             <Link
               onClick={handleLogOut}
-              className="btn bg-[#FFA920] text-white font-poppins rounded-3xl min-h-0 h-10 md:min-h-[3rem] md:h-[3rem]"
+              className="btn  bg-[#FFA920] text-white font-poppins rounded-3xl min-h-0 h-10 md:min-h-[3rem] md:h-[3rem] hidden md:flex"
             >
               LogOut
             </Link>

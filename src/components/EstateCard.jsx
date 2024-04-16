@@ -27,7 +27,7 @@ const EstateCard = ({ estate }) => {
             <FaRegMap />
             {estate.location}
           </p>
-          <hr className="border border-gray-200" />
+          <hr className="border border-orange-200" />
           <p className="text-base font-medium flex items-center gap-1">
           <GiPriceTag/> Price : <span className="text-orange-400">{estate.price}</span>
           </p>
@@ -41,7 +41,7 @@ const EstateCard = ({ estate }) => {
               </li>
             ))}
           </ul>
-          <hr className="border border-gray-200" />
+          <hr className="border border-orange-200" />
           <div className="card-actions items-center">
             <p className="font-semibold flex items-center gap-1">
               <FaHome></FaHome>

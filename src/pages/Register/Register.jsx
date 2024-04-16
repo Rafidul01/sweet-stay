@@ -1,12 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { toast } from 'react-toastify';
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { user , createUser, setUpdate, update} = useContext(AuthContext);
-    console.log(user);
+    const { createUser, setUpdate, update} = useContext(AuthContext);
+    const [eye, setEye] = useState(false);
     const handleRegister = (e) =>{
         e.preventDefault();
         const form = new FormData(e.target);
@@ -46,6 +47,9 @@ const Register = () => {
             console.error(error);
         })
         // console.log(name,email,photo,password);
+    }
+    const handelSeePass = () =>{
+      setEye(!eye);
     }
     return (
         <div className="hero min-h-screen font-poppins ">
@@ -100,19 +104,19 @@ const Register = () => {
                 required
               />
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                className="input input-bordered"
-                required
-              />
-             
-            </div>
+            <div className="form-control relative">
+                <label className="label">
+                  <span className="label-text">Password</span>
+                </label>
+                <input
+                  type={eye ? "text" : "password"}
+                  name="password"
+                  placeholder="password"
+                  className="input input-bordered"
+                  required
+                />
+                <Link onClick={handelSeePass} className="text-2xl absolute right-3 top-[48px]">{eye ? <FaRegEye />:<FaRegEyeSlash />}</Link>
+              </div>
             <p><span className="font-bold">Note : </span><small className="text-black opacity-80">Your password must be at least <span className="text-[#FFA920]">6 characters</span> and includes <span className="text-[#FFA920]">an Uppercase and a Lowercase</span> character.</small></p>
             <div className="form-control mt-6">
               <button className="btn bg-[#FFA920]  text-white">Register</button>
