@@ -1,7 +1,13 @@
 import tagImg from "../images/tag.png";
 import { FaHome, FaRegMap } from "react-icons/fa";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { GiPriceTag } from "react-icons/gi";
+import { TbChartAreaLineFilled } from "react-icons/tb";
+import { BiDonateHeart } from "react-icons/bi";
+
 const EstateCard = ({ estate }) => {
+
   // console.log(estate.facilities);
   return (
     <div className="flex justify-center">
@@ -22,12 +28,13 @@ const EstateCard = ({ estate }) => {
             {estate.location}
           </p>
           <hr className="border border-gray-200" />
-          <p className="text-base font-medium">
-            Price : <span className="text-orange-400">{estate.price}</span>
+          <p className="text-base font-medium flex items-center gap-1">
+          <GiPriceTag/> Price : <span className="text-orange-400">{estate.price}</span>
           </p>
-          <p className="text-base font-medium">Area : {estate.area}</p>
+          <p className="text-base font-medium flex items-center gap-1">
+          <TbChartAreaLineFilled />Area : {estate.area}</p>
           <ul className="list-disc font-medium ">
-            <p className="text-base font-medium">Facilities : </p>
+            <p className="text-base font-medium flex items-center gap-1"><BiDonateHeart /> Facilities : </p>
             {estate.facilities.map((facility, idx) => (
               <li className="ml-8" key={idx}>
                 {facility}
@@ -40,9 +47,9 @@ const EstateCard = ({ estate }) => {
               <FaHome></FaHome>
               {estate.segment_name}
             </p>
-            <button className="btn bg-orange-400 text-white rounded-2xl">
+            <Link to={`/estatedetais/${estate.id}`} className="btn bg-transparent text-orange-400 border-orange-400 rounded-2xl hover:bg-orange-400 hover:text-white">
               Vew Property
-            </button>
+            </Link>
           </div>
         </div>
       </div>

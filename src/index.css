@@ -2,3 +2,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.leaflet-container{
+    height: 100%;
+    width: 600px;
+    border-radius: 1rem;
+    border: 2px solid orange;
+}
+@media screen and (max-width: 425px) {
+    .leaflet-container{
+        height: 310px;
+        width: 310px;
+    }
+}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .leaflet-container{
+
+        width: 400px;
+    }
+}
