@@ -13,7 +13,8 @@ const MainLayout = () => {
       <div className="mt-10">
         <Footer></Footer>
       </div>
-      <ToastContainer />
+      <ToastContainer
+      position="top-center" />
     </div>
   );
 };

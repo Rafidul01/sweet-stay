@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo.png"
 const Footer = () => {
   return (
-    <div className="bg-orange-100 rounded-t-2xl">
-      <footer className="footer p-10 container mx-auto  justify-around text-base-content ">
-        <nav>
+    <div className="bg-orange-100 rounded-t-3xl">
+      <footer className="footer p-10 container mx-auto justify-around text-base-content ">
+        <nav className="">
           <h6 className="footer-title text-orange-500">Pages</h6>
           <Link to="/" className="link link-hover">Home</Link>
           <Link to="/updateprofile" className="link link-hover">Update Profile</Link>

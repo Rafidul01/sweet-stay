@@ -17,7 +17,7 @@ const EstateCard = ({ estate }) => {
     <div className="flex justify-center "  data-aos="flip-left"
     data-aos-easing="ease-out-cubic"
     data-aos-duration="1000">
-      <div className="card w-96 bg-base-100 shadow-xl border relative font-poppins">
+      <div className="card w-96 bg-base-100 shadow-md shadow-orange-300 border relative font-poppins">
         <figure className="px-4 pt-4 ">
           <img src={estate.image_url} alt="Shoes" className="rounded-xl h-[233px] w-full" />
         </figure>

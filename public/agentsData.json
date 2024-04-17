@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "John Smith",
+        "address": "123 Main Street, Suite 100, Cityville, State, ZIP",
+        "phone": "(123) 456-7890",
+        "email": "john@example.com",
+        "image_url": "https://i.ibb.co/qnxrTGy/leio-mclaren-L2d-Tmh-Qzx4-Q-unsplash.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Michael Williams",
+        "address": "789 Oak Avenue, Unit 300, Villageton, State, ZIP",
+        "phone": "(789) 012-3456",
+        "email": "michael@example.com",
+        "image_url": "https://i.ibb.co/m61rcFd/luis-villasmil-hh3-Vi-D0r0-Rc-unsplash.jpg"
+    },
+    {
+        "id": 4,
+        "name": "David Miller",
+        "address": "222 Maple Avenue, Building 500, Countryside, State, ZIP",
+        "phone": "(222) 333-4444",
+        "email": "david@example.com",
+        "image_url": "https://i.ibb.co/HXjW76z/luis-villasmil-Z4rqv-Rp-Rj38-unsplash.jpg"
+    },
+    {
+        "id": 5,
+        "name": "James Johnson",
+        "address": "456 Elm Street, Apartment 200, Townsville, State, ZIP",
+        "phone": "(456) 789-0123",
+        "email": "james@example.com",
+        "image_url": "https://i.ibb.co/gSL3xBL/austin-distel-7uo-Mmz-Pd2-JA-unsplash.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Christopher Brown",
+        "address": "101 Pine Street, Suite 400, Hamletville, State, ZIP",
+        "phone": "(101) 112-1314",
+        "email": "christopher@example.com",
+        "image_url": "https://i.ibb.co/pZQT9Pf/ben-den-engelsen-YUu9-UAc-OKZ4-unsplash.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Daniel Wilson",
+        "address": "333 Cedar Street, Office 600, Riverside, State, ZIP",
+        "phone": "(333) 444-5555",
+        "email": "daniel@example.com",
+        "image_url": "https://i.ibb.co/R2JKfqx/foto-sushi-6anudmp-ILw4-unsplash.jpg"
+    }
+]
