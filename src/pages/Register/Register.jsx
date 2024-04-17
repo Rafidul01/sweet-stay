@@ -1,11 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { toast } from 'react-toastify';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-
+import Aos from "aos";
+import 'aos/dist/aos.css'
 const Register = () => {
+    useEffect(()=>{
+      Aos.init();
+    },[])
     const { createUser, setUpdate, update} = useContext(AuthContext);
     const [eye, setEye] = useState(false);
     const handleRegister = (e) =>{
@@ -53,8 +57,10 @@ const Register = () => {
     }
     return (
         <div className="hero min-h-screen font-poppins ">
-      <div className="flex flex-col md:flex-row-reverse   ">
-        <div className="text-center lg:text-left w-full md:w-[1/2]  bg-[url('https://i.ibb.co/3zvbykC/bernard-hermant-CLKGGw-IBTa-Y-unsplash.jpg')] bg-center bg-cover shadow-xl  md:rounded-r-2xl flex justify-center items-center p-4 ">
+      <div className="flex flex-col md:flex-row-reverse  border-2 md:rounded-2xl border-orange-300 ">
+        <div className="text-center lg:text-left w-full md:w-[1/2]  bg-[url('https://i.ibb.co/3zvbykC/bernard-hermant-CLKGGw-IBTa-Y-unsplash.jpg')] bg-center bg-cover shadow-xl  md:rounded-r-2xl flex justify-center items-center p-4 "         data-aos="flip-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-black">Register now!</h1>
             <div className="py-6  text-black opacity-80  space-y-4">
@@ -66,7 +72,9 @@ const Register = () => {
             </div>
           </div>
         </div>
-        <div onSubmit={handleRegister} className="card shrink-0 w-full md:w-1/2    shadow-2xl bg-base-100 rounded-l-none rounded-r-none rounded-2xl md:rounded-l-2xl">
+        <div onSubmit={handleRegister} className="card shrink-0 w-full md:w-1/2    bg-base-100 rounded-l-none rounded-r-none rounded-2xl md:rounded-l-2xl" data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000">
           <form className="card-body ">
             <div className="form-control">
               <label className="label">

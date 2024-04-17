@@ -5,12 +5,18 @@ import { Link } from "react-router-dom";
 import { GiPriceTag } from "react-icons/gi";
 import { TbChartAreaLineFilled } from "react-icons/tb";
 import { BiDonateHeart } from "react-icons/bi";
-
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 const EstateCard = ({ estate }) => {
-
+  useEffect(()=>{
+    Aos.init();
+  },[])
   // console.log(estate.facilities);
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center "  data-aos="flip-left"
+    data-aos-easing="ease-out-cubic"
+    data-aos-duration="1000">
       <div className="card w-96 bg-base-100 shadow-xl border relative font-poppins">
         <figure className="px-4 pt-4 ">
           <img src={estate.image_url} alt="Shoes" className="rounded-xl h-[233px] w-full" />
