@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { toast } from 'react-toastify';
@@ -13,6 +13,8 @@ const Register = () => {
     },[])
     const { createUser, setUpdate, update} = useContext(AuthContext);
     const [eye, setEye] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleRegister = (e) =>{
         e.preventDefault();
         const form = new FormData(e.target);
@@ -46,10 +48,12 @@ const Register = () => {
             })
             .catch()
             e.target.reset();
-            toast.success("Registered Successful!")
+            navigate(location?.state ? location.state : '/');
+            toast.success("Registered Successful!");
         })
         .catch(error => {
             console.error(error);
+            toast.error("Sign Up Failed!");
         })
         // console.log(name,email,photo,password);
     }

@@ -6,7 +6,12 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-
+import L from "leaflet";
+import markerIconUrl from "../images/marker.png";
+const markerIcon = new L.Icon({
+  iconUrl: markerIconUrl,
+  iconSize: [35,45],
+})
 const EstateDetails = () => {
   const { id } = useParams();
   const data = useLoaderData();
@@ -97,7 +102,7 @@ const EstateDetails = () => {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[latitude, longitude]}>
+            <Marker position={[latitude, longitude]} icon={markerIcon} >
               <Popup>{estate_title}</Popup>
             </Marker>
           </MapContainer>
