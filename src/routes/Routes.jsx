@@ -12,37 +12,55 @@ import Agents from "../pages/Agents/Agents";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout/>,
+    element: <MainLayout />,
     errorElement: <Error />,
     children: [
-        {
-            path: "/",
-            element: <Home></Home>,
-            loader: () => fetch("../estatesData.json"), 
-        },
-        {
-            path: "/login",
-            element: <Login/>
-        },
-        {
-            path: "/register",
-            element: <Register/>
-        },
-        {
-          path: "/updateprofile",
-          element: <PrivateRoute><UpdateProfile/></PrivateRoute>
-        },
-        {
-          path: "/estatedetais/:id",
-          element: <PrivateRoute><EstateDetails/></PrivateRoute>,
-          loader: () => fetch("../estatesData.json"),
-        },
-        {
-          path: "/agents",
-          element: <PrivateRoute><Agents /></PrivateRoute>,
-          loader: () => fetch("../agentsData.json"),
-        }
-    ]
+      {
+        path: "/",
+        element: <Home></Home>,
+        errorElement: <Error />,
+        loader: () => fetch("../estatesData.json"),
+      },
+      {
+        path: "/login",
+        element: <Login />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/updateprofile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
+        errorElement: <Error />,
+      },
+      {
+        path: "/estatedetais/:id",
+        element: (
+          <PrivateRoute>
+            <EstateDetails />
+          </PrivateRoute>
+        ),
+        errorElement: <Error />,
+        loader: () => fetch("../estatesData.json"),
+      },
+      {
+        path: "/agents",
+        element: (
+          <PrivateRoute>
+            <Agents />
+          </PrivateRoute>
+        ),
+        errorElement: <Error />,
+        loader: () => fetch("../agentsData.json"),
+      },
+    ],
   },
 ]);
 
