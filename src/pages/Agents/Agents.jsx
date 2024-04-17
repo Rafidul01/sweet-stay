@@ -1,11 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import AgentCard from "../../components/AgentCard";
+import { Helmet } from "react-helmet-async";
 
 const Agents = () => {
   const agentData = useLoaderData();
   console.log(agentData);
   return (
     <div>
+        <Helmet>
+            <title>Estate Agents</title>
+        </Helmet>
       <h1
         className="text-center text-[#120A21] font-roboto font-extrabold text-4xl mt-10  "
         data-aos="fade-up"

@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import Aos from "aos";
 import 'aos/dist/aos.css'
+import { Helmet } from "react-helmet-async";
 const Register = () => {
     useEffect(()=>{
       Aos.init();
@@ -57,6 +58,9 @@ const Register = () => {
     }
     return (
         <div className="hero min-h-screen font-poppins ">
+          <Helmet>
+        <title>Register - Sweet Stay</title>
+      </Helmet>
       <div className="flex flex-col md:flex-row-reverse  border-2 md:rounded-2xl border-orange-300 ">
         <div className="text-center lg:text-left w-full md:w-[1/2]  bg-[url('https://i.ibb.co/3zvbykC/bernard-hermant-CLKGGw-IBTa-Y-unsplash.jpg')] bg-center bg-cover shadow-xl  md:rounded-r-2xl flex justify-center items-center p-4 "         data-aos="flip-right"
               data-aos-easing="ease-out-cubic"

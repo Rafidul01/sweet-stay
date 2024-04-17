@@ -5,6 +5,7 @@ import { FaRegMap } from "react-icons/fa";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const EstateDetails = () => {
   const { id } = useParams();
@@ -28,6 +29,9 @@ const EstateDetails = () => {
   console.log(estate);
   return (
     <div>
+      <Helmet>
+        <title>Estate Details | {id}</title>
+      </Helmet>
       <div
         className="w-full h-[400px] md:h-[500px] lg:h-[700px] bg-cover bg-center  rounded-2xl bg-no-repeat flex justify-center items-center "
         style={{ backgroundImage: `url('${image_url}')` }}

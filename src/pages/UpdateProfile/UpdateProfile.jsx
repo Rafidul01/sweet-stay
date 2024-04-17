@@ -6,6 +6,7 @@ import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 const UpdateProfile = () => {
   const { user, setUpdate, update } = useContext(AuthContext);
   const [nameInput, setNameInput] = useState(true);
@@ -41,6 +42,9 @@ const UpdateProfile = () => {
   };
   return (
     <div className="hero min-h-screen font-poppins">
+      <Helmet>
+        <title>Update Profile of {user.displayName}</title>
+      </Helmet>
       <div className="flex flex-col md:flex-col gap-4 justify-center items-center ">
         <div
           onSubmit={handleUpdate}
