@@ -4,7 +4,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
 import log from "../../images/logo.png";
 const Navbar = () => {
-  const { user, logOut, loading } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -111,7 +111,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
 
-        {loading ? <span className="loading loading-infinity loading-xl bg-orange-300 mr-16"></span> :
+        {
          user ? (
           <>
             <div

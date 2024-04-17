@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA-1ZTjNW9izKVbx_7C0-rnB4bwuPEFTHw",
-  authDomain: "sweet-stay.firebaseapp.com",
-  projectId: "sweet-stay",
-  storageBucket: "sweet-stay.appspot.com",
-  messagingSenderId: "122371300831",
-  appId: "1:122371300831:web:77d92e3c1f96bd9942386a"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
